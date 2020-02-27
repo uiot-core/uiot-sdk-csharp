@@ -47,12 +47,6 @@ namespace uPLibrary.Networking.M2Mqtt.UIoTClient
         private bool disconnected = false;
 
 
-        static void callback_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
-        {
-            Console.WriteLine(e.Topic);
-            Console.WriteLine(System.Text.Encoding.Default.GetString(e.Message));
-        }
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -62,7 +56,7 @@ namespace uPLibrary.Networking.M2Mqtt.UIoTClient
         /// <param name="deviceSecret">UIoT-Core deviceSecret</param>
         /// <param name="secure">UIoT-Core secure mode:1883/8883</param>
         public UIoTClient(string region, string productSN, string deviceSN, string deviceSecret, bool secure) :
-            this(region, productSN, deviceSN, deviceSecret, secure, null, callback_MqttMsgPublishReceived)
+            this(region, productSN, deviceSN, deviceSecret, secure, null, null)
         {
         }
 
